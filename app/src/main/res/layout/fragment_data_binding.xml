@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".dataBindingFragment"
+        tools:viewBindingIgnore="true">
+
+        <TextView
+            android:id="@+id/dataBindingFragmentVeryLongIndentificationFirstNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@{user.getFirstName()}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/dataBindingFragmentVeryLongIndentificationLastNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{user.getLastName()}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dataBindingFragmentVeryLongIndentificationFirstNameTv" />
+
+
+        <TextView
+            android:id="@+id/dataBindingFragmentVeryLongIndentificationCityTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{user.getCity()}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dataBindingFragmentVeryLongIndentificationLastNameTv" />
+
+        <Button
+            android:id="@+id/dataBindingFragmentVeryLongIndentificationBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="@{()->fragment.onButtonClicked()}"
+            android:text="Back"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dataBindingFragmentVeryLongIndentificationCityTv" />
+
+        <EditText
+            android:id="@+id/showTextEt"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:hint="Enter some text..."
+            android:paddingHorizontal="16dp"
+            android:text="@={fragment.observableField}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dataBindingFragmentVeryLongIndentificationBackBtn" />
+
+
+        <Button
+            android:id="@+id/showTextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="@{()->fragment.onEditTextShowClicked()}"
+            android:text="Show EditText"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/showTextEt" />
+
+
+        <TextView
+            android:id="@+id/showTextTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/showTextBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.bindingexample.User" />
+
+        <variable
+            name="fragment"
+            type="com.example.bindingexample.DataBindingFragment" />
+    </data>
+
+</layout>
