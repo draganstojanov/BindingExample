@@ -2,6 +2,17 @@
 
 <layout>
 
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.bindingexample.User" />
+
+        <variable
+            name="fragment"
+            type="com.example.bindingexample.DataBindingFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -39,10 +50,10 @@
 
         <TextView
             android:id="@+id/dataBindingFragmentVeryLongIndentificationCityTv"
+            maliTest="@{user.city}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@{user.getCity()}"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,16 +112,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <data>
-
-        <variable
-            name="user"
-            type="com.example.bindingexample.User" />
-
-        <variable
-            name="fragment"
-            type="com.example.bindingexample.DataBindingFragment" />
-    </data>
 
 </layout>
